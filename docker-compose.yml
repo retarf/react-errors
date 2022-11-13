@@ -1,0 +1,14 @@
+version: '3'
+
+
+services:
+  front:
+    image: node:16.11
+    volumes:
+      - ./project:/project
+    working_dir: /project/starting-project
+    #user: "node"
+    ports: 
+      - "3000:3000"
+    entrypoint: npm start 
+      

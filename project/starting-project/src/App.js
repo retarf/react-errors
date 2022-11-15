@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
 import UserInput from './components/Users/UserInput/UserInput';
+import UserList from './components/Users/UserList/UserList'
 
-import './App.css';
+import styles from './App.module.css';
 
 const App = () => {
 
-    const [Users, setUsers] = useState();
+    const [Users, setUsers] = useState([]);
 
-    const addUser = newUser => {
+    const addUser = (UserName, UserAge) => {
         setUsers(prevUsers => {
             const updatedUsers = [...prevUsers];
-            updatedUsers.unshift({name: newUser.name, age: newUser.age, id: Math.random().toString()})
+            updatedUsers.unshift({name: UserName, age: UserAge, id: Math.random().toString()})
             return updatedUsers
         });
     };
@@ -23,12 +24,15 @@ const App = () => {
     };
 
     return (
-        <div>
-            <section id="user-form">
-                <UserInput />
-            </section>
-            <section id="users">
-            </section>
+        <div className={`${styles['main']}`}>
+            <div className={`${styles['container']}`}>
+                <section id="user-form">
+                    <UserInput onAddUser={addUser}/>
+                </section>
+                <section id="users">
+                    <UserList items={Users}/>
+                </section>
+            </div>
         </div>
     );
 };

@@ -16,7 +16,7 @@ const UserList = props => {
                         {user.name}
                     </UserItem>
                 )
-            )};
+            )}
         </ul>
     )
 };

@@ -1,7 +1,0 @@
-form-control {
-    background-color: darkgray;
-}
-
-form-control.invalid input{
-    background-color: red;
-}

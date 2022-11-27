@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import UserInput from './components/Users/UserInput/UserInput';
+import AddUser from './components/Users/AddUser';
 import UserList from './components/Users/UserList/UserList'
 
 import styles from './App.module.css';
@@ -27,7 +27,7 @@ const App = () => {
         <div className={`${styles['main']}`}>
             <div className={`${styles['container']}`}>
                 <section id="user-form">
-                    <UserInput onAddUser={addUser}/>
+                    <AddUser onAddUser={addUser}/>
                 </section>
                 <section id="users">
                     <UserList items={Users}/>
